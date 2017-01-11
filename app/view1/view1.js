@@ -30,7 +30,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         $http.get("https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=sanisettes&rows=100")
             .then(function(response) {
-                response.data.records.l(function(sanisette){
+                response.data.records(function(sanisette){
                     L.marker([sanisette.fields.geo_point_2d[0], sanisette.fields.geo_point_2d[1]]).addTo(map)
                 });
             });
