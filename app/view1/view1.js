@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ["$scope", function ($scope) {
+.controller('View1Ctrl', ["$scope", '$http', function ($scope, $http) {
 
 	$scope.isSanitaireChecked = true;
 	$scope.isBarChecked = true;
