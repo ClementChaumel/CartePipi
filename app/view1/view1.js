@@ -28,12 +28,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
     osm.addTo(map);
 
-        $http.get("http://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=sanisettes")
+        $http.get("https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=sanisettes&rows=100")
             .then(function(response) {
-                console.log(response.data);
+                response.data.records.l(function(sanisette){
+                    L.marker([sanisette.fields.geo_point_2d[0], sanisette.fields.geo_point_2d[1]]).addTo(map)
+                });
             });
 
-        var marker = L.marker([43.59325656089595, 1.434917774417878]).addTo(map);
+        //var marker = L.marker([43.59325656089595, 1.434917774417878]).addTo(map);
 }
 
 	InitialiserCarte();
