@@ -23,3 +23,58 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+#map {
+  margin-left: auto;
+	  margin-right: auto;
+	  width: 65%;
+	  height: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#map div canvas{
+    border-radius: 10px;
+}
+
+#titre{
+	font-weight:normal;
+	font-variant:small-caps;
+	color:#FFFFFF;
+	letter-spacing:75pt;
+	word-spacing:1pt;
+	font-size:68px;
+	text-align:center;
+	font-family:helvetica, sans-serif;
+	line-height:3;
+	margin:0px;
+	padding:0px;
+}
+
+.background-image {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.cover {
+    position: fixed;
+    opacity: 1;
+    background-color: rgba(0,0,0,.6);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cover.black {
+	z-index: -1;
+    background-color: rgba(0,0,0,.6);
+}
