@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['$http', function($http) {
 
 	function InitialiserCarte() {
 
@@ -28,7 +28,12 @@ angular.module('myApp.view1', ['ngRoute'])
 
     osm.addTo(map);
 
-    var marker = L.marker([45.7531152, 4.827906]).addTo(map);
+        $http.get("http://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=sanisettes")
+            .then(function(response) {
+                console.log(response.data);
+            });
+
+        var marker = L.marker([43.59325656089595, 1.434917774417878]).addTo(map);
 }
 
 	InitialiserCarte();
