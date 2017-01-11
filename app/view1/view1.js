@@ -9,7 +9,19 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$http', function($http) {
+.controller('View1Ctrl', ["$scope", function ($scope) {
+
+	$scope.isSanitaireChecked = true;
+	$scope.isBarChecked = true;
+
+	$scope.sanitaireClick = function(){
+		console.log("coucou");
+		$scope.isSanitaireChecked = !$scope.isSanitaireChecked;
+	}
+
+	$scope.barClick = function(){
+		$scope.isBarChecked = !$scope.isBarChecked;
+	}
 
 	function InitialiserCarte() {
 

@@ -2,3 +2,9 @@
 <div class="cover black" data-color="black"></div>
 <h1 id="titre">CARTE PIPI</h1>
 <div id="map"></div>
+<div class="filtres">
+		<img ng-click="sanitaireClick()" class = "elem_liste" src="images/marqueur_sanitaire.png" alt="" ng-show="isSanitaireChecked">
+		<img ng-click="sanitaireClick()" class = "elem_liste" src="images/marqueur_sanitaire_nb.png" alt="" ng-hide="isSanitaireChecked">
+		<img ng-click="barClick()" class = "elem_liste" src="images/marqueur_biere.png" alt="" ng-show="isBarChecked">
+		<img ng-click="barClick()" class = "elem_liste" src="images/marqueur_biere_nb.png" alt="" ng-hide="isBarChecked">
+</div>
